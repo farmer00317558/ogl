@@ -54,23 +54,6 @@ Construct a link using the OGL standard parameters:
 </a>
 ```
 
-### For Generation Tools (Target)
-
-Parse the URL parameters on page load and populate your UI:
-
-```javascript
-// Minimal Implementation
-const params = new URLSearchParams(window.location.search);
-if (params.get("ogl_ver")) {
-  const prompt = params.get("prompt");
-  const width = params.get("width");
-  const height = params.get("height");
-  // ... fill your UI inputs
-}
-```
-
----
-
 ## 📝 Specification
 
 The current stable version is **v1.0.0**.
@@ -92,82 +75,6 @@ The current stable version is **v1.0.0**.
 | `height`          | ❌       | Image height in pixels.         |
 
 _(See full spec for Video, Audio, and Payload extensions)_
-
----
-
-## 🛠️ Official SDK
-
-We provide a lightweight JavaScript/TypeScript SDK to handle parsing and validation.
-
-```bash
-npm install @opengen/ogl-sdk
-```
-
-```javascript
-import { OGL } from "@opengen/ogl-sdk";
-
-// Creating a link
-const link = OGL.stringify("https://site.com", {
-  prompt: "A beautiful sunset over mountains",
-  width: 1024,
-  height: 1024,
-});
-
-// Parsing a link
-const data = OGL.parse(window.location.href);
-```
-
----
-
-## 🤝 Adoption & Ecosystem
-
-Add your project to the list below if you support OGL!
-
-### Supported Libraries (Source)
-
-- _Your prompt library here_ - Submit a PR to be listed
-
-### Supported Tools (Target)
-
-- _Your generation tool here_ - Submit a PR to be listed
-
----
-
-## 🏆 Badge
-
-If your website supports OGL, feel free to use this badge:
-
-```markdown
-[![OGL Compatible](https://img.shields.io/badge/OGL-Compatible-7000FF.svg)](https://github.com/opengen-link/ogl)
-```
-
-[![OGL Compatible](https://img.shields.io/badge/OGL-Compatible-7000FF.svg)](https://github.com/opengen-link/ogl)
-
----
-
-## 💬 Contributing
-
-This protocol is community-driven. We welcome RFCs (Request for Comments) and Pull Requests.
-
-1. Open an Issue to discuss proposed changes.
-2. Submit a PR to update the `spec/` directory.
-
-### RFC Process
-
-For major changes (new parameters, new modalities), please follow our [RFC Process](./spec/RFC-PROCESS.md).
-
----
-
-## 📊 Roadmap
-
-- [x] Core specification (v1.0.0)
-- [x] Image generation parameters
-- [ ] Video generation parameters
-- [ ] Audio generation parameters
-- [ ] Official JavaScript SDK
-- [ ] Official Python SDK
-- [ ] ComfyUI integration
-- [ ] Automatic1111 WebUI extension
 
 ---
 
